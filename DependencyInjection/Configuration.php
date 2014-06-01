@@ -21,7 +21,7 @@ class Configuration implements ConfigurationInterface
         $rootNode = $treeBuilder->root('kunstmaan_sentry');
         $rootNode
             ->children()
-                ->booleanNode('enabled')
+                ->scalarNode('enabled')
                     ->defaultFalse()
                 ->end()
                 ->scalarNode('dsn')

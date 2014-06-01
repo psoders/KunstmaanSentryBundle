@@ -25,7 +25,7 @@ class KunstmaanSentryExtension extends Extension
         $container->setParameter($this->getAlias(). '.enabled', $config['enabled']);
         $container->setParameter($this->getAlias(). '.dsn', $config['dsn']);
 
-        if ($this->isConfigEnabled($container, $config)) {
+        if (isset($config['enabled']) && $config['enabled']) {
             if (empty($config['dsn'])) {
                 throw new InvalidArgumentException("The kunstmaan_sentry config array 'dsn' key is required.");
             }
